@@ -1,39 +1,60 @@
 
 .topnav { 
-        background-color: #E8DFCA;
-        color: #F5EFE6;
-        text-align: center;
-        font-size: 75px;
-        font-weight: bold;
-        padding: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #b3a997;
-        overflow: hidden;
+      background-color: #ddccb5;
+      color: #F5EFE6;
+      text-align: center;
+      font-size: 75px;
+      font-weight: bold;
+      padding: 0px;
+      margin: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
 }
 a {
-        float: left;
-        color: #343d32;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        border-radius: 20px;
-        font-weight: bold;
-        background-color: #23c483;
-        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-        color: #fff;
+      float: left;
+      align-items: center;
+      background-color: #ddccb5;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      color: rgba(0, 0, 0, 0.85);
+      cursor: pointer;
+      display: inline-flex;
+      font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 1.25;
+      min-height: 3rem;
+      padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+      text-decoration: none;
+      transition: all 250ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      width: auto;
     
 }
+a:hover,
+a:focus {
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+      color: rgba(0, 0, 0, 0.65);
+}
 a:active{
-    transform: translateY(-1px);
+      background-color: #cec1a9;
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+      color: rgba(0, 0, 0, 0.65);
+      transform: translateY(0);
 }
 a:hover {
-      background-color: #d2c9b6;
+      background-color: #cfbf9d;
       color: black;
       transform: rotateY('90deg');
 }
 .active {
-      background-color: #6f7525;
+      background-color: #404413;
       color: white;
 }
 .container {
@@ -46,9 +67,9 @@ a:hover {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-    text-align: center;
-    color: #F5EFE6;	
-    font-size: 55px;
-    font-weight: bold;
-    font-family: Dancing Script;
+      text-align: center;
+      color: #F5EFE6;	
+      font-size: 55px;
+      font-weight: bold;
+      font-family: Dancing Script;
 }
