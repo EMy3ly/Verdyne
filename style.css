@@ -1,20 +1,21 @@
-
-.topnav { 
-      background-color: #ddccb5;
-      color: #F5EFE6;
-      text-align: center;
-      font-size: 75px;
-      font-weight: bold;
-      padding: 0px;
-      margin: 0px;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow: hidden;
+h1 {
+      font-family: Ephesis;
+      font-size: 100px;
+      color: #3d633d;
 }
+
+.navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #ffffff;
+}
+
 a {
       float: left;
       align-items: center;
-      background-color: #ddccb5;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
       box-sizing: border-box;
       color: rgba(0, 0, 0, 0.85);
       cursor: pointer;
@@ -35,6 +36,7 @@ a {
       width: auto;
     
 }
+
 a:hover,
 a:focus {
       border-color: rgba(0, 0, 0, 0.15);
@@ -42,14 +44,14 @@ a:focus {
       color: rgba(0, 0, 0, 0.65);
 }
 a:active{
-      background-color: #cec1a9;
+      background-color: #6e8e5d;
       border-color: rgba(0, 0, 0, 0.15);
       box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
       color: rgba(0, 0, 0, 0.65);
       transform: translateY(0);
 }
 a:hover {
-      background-color: #cfbf9d;
+      background-color: #6e8e5d;
       color: black;
       transform: rotateY('90deg');
 }
