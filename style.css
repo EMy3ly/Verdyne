@@ -8,7 +8,7 @@ body {
         text-align: center;
         /* font-size: 75px; */
         font-weight: bold;
-        padding: 13px;
+        padding: 0px;
         font-family: Arial, Helvetica, sans-serif;
         /* overflow: hidden; */
         display: flex;
@@ -21,18 +21,18 @@ body {
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
-        border-radius: 12px;
+        border-radius: 0px;
         font-weight: bold;
-        background-color: #004b1d;
+        background-color: #f1f2e6;
         /* box-shadow: 0px 15px 20px #004b1dc4; */
-        color: #fff;
+        color: #000000;
         margin-left: 10px;
 }
 a:active{
     transform: translateY(-1px);
 }
 a:hover {
-      background-color: #d2c9b6;
+      background-color: #adbf8a;
       color: black;
 }
 .container {
@@ -58,6 +58,7 @@ a:hover {
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 17px;
         border-radius: 12px;
         font-weight: bold;
@@ -70,4 +71,8 @@ a:hover {
 .container_text button:hover{
       background-color: #d2c9b6;
       color: black;
+}
+.container2 p{
+      font-family: Arial, Helvetica, sans-serif;
+      
 }
