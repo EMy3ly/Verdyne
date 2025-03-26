@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despre noi</title>
+    <link rel="stylesheet" href="plantele_mele.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="footer.css">
 </head>
@@ -15,12 +16,68 @@
         <a href="depre_noi.html">Despre noi</a>
     </nav>
     </div>
+    <br><br>
+    <div class="container">
+        <div class="slide">
+            <div class="item" style="background-image: url(photos/aloevera.jpg);">
+                <div class="content">
+                    <div class="name">Aloe Vera</div>
+                    <div class="description">Aloe vera este o specie de plante suculente care este probabil originară din nordul Africii.</div>
+                    <button>Vezi mai mult</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="item" style="background-image: url(photos/aloevera.jpg);">
+                <div class="content">
+                    <div class="name">Aloe Vera</div>
+                    <div class="description">Aloe vera este o specie de plante suculente care este probabil originară din nordul Africii.</div>
+                    <button>Vezi mai mult</button>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="item" style="background-image: url(photos/aloevera.jpg);">
+                <div class="content">
+                    <div class="name">Aloe Vera</div>
+                    <div class="description">Aloe vera este o specie de plante suculente care este probabil originară din nordul Africii.</div>
+                    <button>Vezi mai mult</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
     <form>
-        <label for="plant_name">Nume:</label><br>
-        <input type="text" id="plant_name" name="plant_name"><br>
-        <label for="plant_speacies">Specie:</label><br>
-        <input type="text" id="plant_speacies" name="plant_speacies">
+        <fieldset>
+            <legend>Informatii personale</legend>
+            <label for="name">Nume si prenume:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <label for="password">Parola:</label>
+            <input type="password" id="password" name="pass" required />
+            <label for="confirmPassword">Confirma parola:</label>
+            <input type="password" id="confirmPassword" name="confirmPass" required />
+            <label>Sexul:</label>
+            <div class="gender-group">
+                <input type="radio" name="gender" value="male" id="male" required />
+                <label for="male">Masculin</label>
+                <input type="radio" name="gender" value="female" id="female" />
+                <label for="female">Feminin</label>
+            </div>
+            <label for="dob">Data nasterii:</label>
+            <input type="date" id="dob" name="dob" required />
+            
+            <legend>Planta mea</legend>
+            <label for="name">Nume:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="plant_speacies">Specie:</label><br>
+            <input type="text" id="plant_speacies" name="plant_speacies">
+            <input type="submit" value="Adauga" />
+        </fieldset>
     </form>
+    <br><br>
     <div class="footer">
         <div class="container3">
             <div class="row">
