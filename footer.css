@@ -1,12 +1,27 @@
-.footer {
-    display: flex;
-    padding: 3px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container3{
+    max-width: 1170px;
     background-color: #adbf8a;
-    color: #000000;
+    margin: auto;
+}
+
+.footer {
+    padding: 40px 0;
+    background-color: #adbf8a;
   }
 
-.footer div {
-    text-align: center;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style-type: none;
 }
 
 .contact {
@@ -17,22 +32,48 @@
     flex-grow: 1;
 }
 
-.footer a {
+.footer_col h3 {
+    font-size: 18px;
+    text-transform: capitalize;
     text-decoration: none;
-    color: #000000;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: justify;
+    margin-bottom: 35px;
+    font-weight: 800;
+    color: #004b1d;
     position: relative;
-}
-
-.footer h4 {
-    text-decoration: none;
-    color: #000000;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.footer h3 {
-    text-decoration: none;
+.footer_col h3::before{
+    content: "";
+    position: absolute;
+    left: 50;
+    bottom: -5px;
+    background-color: #4b0000;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer_col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer_col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.footer_col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
     color: #000000;
-    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer_col ul li a:hover{
+    color: #004b1d;
+    padding-left: 8px;
 }
