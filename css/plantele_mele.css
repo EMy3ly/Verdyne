@@ -5,6 +5,69 @@ body {
     margin: 0;
     background-color: #f0f0f0;
 }
+.container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+.slide {
+    padding: 0 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
+.plant-container {
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.plant-container::-webkit-scrollbar {
+    display: none;
+}
+.plant-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 450px;
+    margin-right: 40px;
+}
+.plant-img {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+.product-plant {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translatex(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #f0f0f0;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+.plant-card:hover .card-btn {
+    opacity: 1;
+}
+.card-btn:hover {
+    background: #ccc;
+    color:#7A8054;
+}
+
+
 .item {
     height: 200px;
 

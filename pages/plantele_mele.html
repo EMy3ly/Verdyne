@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
+    <!------------------------------------HEADER------------------------------------------------->
     <div class="welcoming">
          <nav class="navbar">
         <a href="../index.html">Acasa</a>
@@ -16,40 +17,27 @@
         <a href="depre_noi.html">Despre noi</a>
     </nav>
     </div>
+    <!------------------------------------IMAGE-SLIDER------------------------------------------->
     <br><br>
     <div class="container">
-        <div class="slide">
-            <div class="item" style="background-image: url(../photos/aloevera.jpg);">
-                <div class="content">
-                    <p class="name">Aloe Vera</p>
-                    <p class="description">Aloe vera este o specie de plante suculente care este probabil originară din nordul Africii.</p>
-                    <p id="temp">Temperatura citita...</p>
-                    <p id="humi">Umiditatea citita...</p>
-                    <button>Vezi mai mult</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide">
-            <div class="item" style="background-image: url(../photos/aloevera.jpg);">
-                <div class="content">
-                    <div class="name">Aloe Vera</div>
-                    <div class="description">Aloe vera este o specie de plante suculente care este probabil originară din nordul Africii.</div>
-                    <button>Vezi mai mult</button>
-                </div>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="item" style="background-image: url(../photos/aloevera.jpg);">
-                <div class="content">
-                    <div class="name">Aloe Vera</div>
-                    <div class="description">Aloe vera este o specie de plante suculente care este probabil originară din nordul Africii.</div>
-                    <button>Vezi mai mult</button>
+        <h2 class="slide">PLANTA MEA</h2>
+        <button class="pre-btn"><img src="../photos/arrow-leaf.png" alt=""</button>
+        <button class="nxt-btn"><img src="../photos/arrow-leaf.png" alt=""</button>
+        <div class="plant-container">
+            <div class="plant-card">
+                <div class="plant-img">
+                    <img src="../photos/aloe_vera.png" class="product-plant" alt="">
+                    <button class="card-btn">adauga planta</button>
+                </div> 
+                <div class="plant-info">
+                    <h2 class="species">specia</h2>
+                    <p class="description">scurta descriere</p>
                 </div>
             </div>
         </div>
     </div>
     <br><br>
+    <!------------------------------------FORM--------------------------------------------------->
     <form>
         <fieldset>
             <legend>Informatii personale</legend>
@@ -74,12 +62,13 @@
             <legend>Planta mea</legend>
             <label for="name">Nume:</label>
             <input type="text" id="name" name="name" required />
-            <label for="plant_speacies">Specie:</label><br>
-            <input type="text" id="plant_speacies" name="plant_speacies">
+            <label for="plant_species">Specie:</label><br>
+            <input type="text" id="plant_species" name="plant_species">
             <input type="submit" value="Adauga" />
         </fieldset>
     </form>
     <br><br>
+    <!------------------------------------FOOTER------------------------------------------------->
     <div class="footer">
         <div class="container_f">
             <div class="row">
