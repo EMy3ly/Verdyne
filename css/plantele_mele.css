@@ -1,77 +1,144 @@
-body {
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+ body{
+  margin: 0;
+  min-height: 100vh;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+} 
+<!-------------------------------PLANT-SLIDER------------------------------------------------>
+*{
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-.container {
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
+
+.slide-container{
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
 }
-.slide {
-    padding: 0 10vw;
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 40px;
-    text-transform: capitalize;
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
 }
-.plant-container {
-    padding: 0 10vw;
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+.card{
+  border-radius: 25px;
+  background-color: #f0f0f0;
 }
-.plant-container::-webkit-scrollbar {
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #7A8054;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #7A8054;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #f0f0f0;
+}
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4e5235;
+}
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+.button{
+  margin: 14px;
+  background-color: #7A8054;
+  border-radius: 100px;
+  box-shadow: #4e5235 0 -25px 18px -14px inset, #4e5235 0 1px 2px, #4e5235 0 2px 4px, #4e5235 0 4px 8px, #4e5235 0 8px 16px, #4e5235 0 16px 32px;
+  color: #f0f0f0;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button:hover {
+  box-shadow: #4e5235 0 -25px 18px -14px inset, #4e5235 0 1px 2px, #4e5235 0 2px 4px, #4e5235 0 4px 8px, #4e5235 0 8px 16px, #4e5235 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+.swiper-navBtn{
+  color: #4e5235;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #7A8054;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+  color: #4e5235;
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
     display: none;
-}
-.plant-card {
-    flex: 0 0 auto;
-    width: 250px;
-    height: 450px;
-    margin-right: 40px;
-}
-.plant-img {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-}
-.product-plant {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.card-btn {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translatex(-50%);
-    padding: 10px;
-    width: 90%;
-    text-transform: capitalize;
-    border: none;
-    outline: none;
-    background: #f0f0f0;
-    border-radius: 5px;
-    transition: 0.5s;
-    cursor: pointer;
-    opacity: 0;
-}
-.plant-card:hover .card-btn {
-    opacity: 1;
-}
-.card-btn:hover {
-    background: #ccc;
-    color:#7A8054;
+  }
 }
 
-
-.item {
-    height: 200px;
-
-}
+<!---------------------------------FORM---------------------------------------------->
 
 form {
     width: 400px;
@@ -81,18 +148,15 @@ form {
     box-shadow: 0 0 10px #4e5235;
     margin-left: 500px;
 }
-
 fieldset {
     border: 1px solid #f0f0f0;
     padding: 10px;
     margin: 0;
 }
-
 legend {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 label {
     display: block;
     margin-bottom: 5px;
@@ -110,21 +174,17 @@ input[type="date"] {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
 .gender-group {
     margin-bottom: 10px;
 }
-
 .gender-group label {
     display: inline-block;
     margin-left: 10px;
 }
-
 input[type="radio"] {
     margin-left: 10px;
     vertical-align: middle;
 }
-
 input[type="submit"] {
     padding: 10px 20px;
     border-radius: 5px;

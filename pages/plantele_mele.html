@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../css/plantele_mele.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/footer.css">
+
+    <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
 </head>
 <body>
     <!------------------------------------HEADER------------------------------------------------->
@@ -18,37 +22,102 @@
     </nav>
     </div>
     <!------------------------------------IMAGE-SLIDER------------------------------------------->
-    <br><br>
-    <div class="container">
-        <h2 class="slide">PLANTA MEA</h2>
-        <button class="pre-btn"><img src="../photos/arrow-leaf.png" alt=""</button>
-        <button class="nxt-btn"><img src="../photos/arrow-leaf.png" alt=""</button>
-        <div class="plant-container">
-            <div class="plant-card">
-                <div class="plant-img">
-                    <img src="../photos/aloe_vera.png" class="product-plant" alt="">
-                    <button class="card-btn">adauga planta</button>
-                </div> 
-                <div class="plant-info">
-                    <h2 class="species">specia</h2>
-                    <p class="description">scurta descriere</p>
+    <br><br><br><br>
+    <div class="slide-container swiper">
+        <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper">
+    <!----------PLANT1--------------------------------------------------------------------->
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                  <img src="../photos/aloe_vera.png" alt="" class="card-img">
                 </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name">PLANT1</h2>
+                <p class="description">DESCRIPTION</p>
+                <button class="button">Vezi</button>
+              </div>
             </div>
+    <!----------PLANT2--------------------------------------------------------------------->
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                  <img src="../photos/D_N_2.jpg" alt="" class="card-img">
+                </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name">PLANT2</h2>
+                <p class="description">DESCRIPTION</p>
+                <button class="button">Vezi</button>
+              </div>
+            </div>
+    <!----------PLANT3--------------------------------------------------------------------->
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                  <img src="../photos/D_N_3.jpg" alt="" class="card-img">
+                </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name">PLANT3 </h2>
+                <p class="description">DESCRIPTION</p>
+                <button class="button">Vezi</button>
+              </div>
+            </div>
+    <!----------PLANT4--------------------------------------------------------------------->
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                  <img src="../photos/D_N_4.jpg" alt="" class="card-img">
+                </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name">PLANT4</h2>
+                <p class="description">DESCRIPTION</p>
+                <button class="button">Vezi</button>
+              </div>
+            </div>
+    <!----------PLANT5--------------------------------------------------------------------->
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+                <div class="card-image">
+                  <img src="../photos/D_N_5.jpg" alt="" class="card-img">
+                </div>
+              </div>
+              <div class="card-content">
+                <h2 class="name">PLANT5</h2>
+                <p class="description">DESCRIPTION</p>
+                <button class="button">Vezi</button>
+              </div>
+            </div>
+    <!------------------------------------------------------------------------------->
+          </div>
         </div>
-    </div>
-    <br><br>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+      </div>
+
+    <!------------------------JS------------------------------------------------------->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
     <!------------------------------------FORM--------------------------------------------------->
+    <br><br><br><br>
     <form>
         <fieldset>
-            <legend>Informatii personale</legend>
-            <label for="name">Nume si prenume:</label>
+            <legend>Planta mea</legend>
+            <label for="name">Nume:</label>
             <input type="text" id="name" name="name" required />
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-            <label for="password">Parola:</label>
-            <input type="password" id="password" name="pass" required />
-            <label for="confirmPassword">Confirma parola:</label>
-            <input type="password" id="confirmPassword" name="confirmPass" required />
+            <label for="plant_species">Specie:</label><br>
+            <input type="text" id="plant_species" name="plant_species">
             <label>Sexul:</label>
             <div class="gender-group">
                 <input type="radio" name="gender" value="male" id="male" required />
@@ -58,12 +127,10 @@
             </div>
             <label for="dob">Data nasterii:</label>
             <input type="date" id="dob" name="dob" required />
-            
-            <legend>Planta mea</legend>
-            <label for="name">Nume:</label>
-            <input type="text" id="name" name="name" required />
-            <label for="plant_species">Specie:</label><br>
-            <input type="text" id="plant_species" name="plant_species">
+            <label for="password">Parola:</label>
+            <input type="password" id="password" name="pass" required />
+            <label for="confirmPassword">Confirma parola:</label>
+            <input type="password" id="confirmPassword" name="confirmPass" required />
             <input type="submit" value="Adauga" />
         </fieldset>
     </form>
