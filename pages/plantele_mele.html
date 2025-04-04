@@ -111,7 +111,40 @@
 
     <!------------------------------------FORM--------------------------------------------------->
     <br><br><br><br>
-    <form>
+    <div class="column">
+      <section class="container">
+        <header>PLANTA MEA</header>
+        <form action="#" class="form">
+          <div class="input-box">
+            <label>Nume si prenume:</label>
+            <input type="text" placeholder="Introdu numele si prenumele" required />
+          </div>
+          <div class="input-box">
+            <label>Specia:</label>
+            <input type="text" placeholder="Introdu specia plantei" required />
+          </div>
+          <div class="input-box">
+            <label>Ziua de nastere:</label>
+            <input type="date" placeholder="Introdu ziua de nastere" required />
+          </div>
+          <div class="gender-box">
+            <h3>Genul:</h3>
+            <div class="gender-option">
+              <div class="gender">
+                <input type="radio" id="check-male" name="gender" checked />
+                <label for="check-male">Barbat</label>
+              </div>
+              <div class="gender">
+                <input type="radio" id="check-female" name="gender" />
+                <label for="check-female">Femeie</label>
+              </div>
+            </div>
+          </div>
+          <button>Adauga planta</button>
+        </form>
+      </section>
+    </div>
+    <!-- <form>
         <fieldset>
             <legend>Planta mea</legend>
             <label for="name">Nume:</label>
@@ -133,7 +166,7 @@
             <input type="password" id="confirmPassword" name="confirmPass" required />
             <input type="submit" value="Adauga" />
         </fieldset>
-    </form>
+    </form> -->
     <br><br>
     <!------------------------------------FOOTER------------------------------------------------->
     <div class="footer">
