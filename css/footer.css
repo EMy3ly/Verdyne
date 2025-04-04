@@ -73,7 +73,7 @@ ul{
     transition: all 0.3s ease;
 }
 
-.footer_col ul li a:hover{
+.col_1 a:hover{
     color: #004b1d;
     padding-left: 8px;
 }
