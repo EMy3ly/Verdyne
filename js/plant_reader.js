@@ -152,3 +152,58 @@ function showPopup(imageSrc, description) {
       }
     });
   });
+
+//   <!------------------------------------PLANT-STRIKE---------------------------------------------------> 
+ // Function to check the plant and update the streak
+function checkPlant() {
+    const today = new Date().toDateString(); // Get today's date as a string
+    const lastChecked = localStorage.getItem("lastChecked"); // Get the last checked date from localStorage
+    let streak = parseInt(localStorage.getItem("streak")) || 0; // Get the current streak from localStorage
+  
+    if (lastChecked === today) {
+      // If the plant was already checked today
+      document.getElementById("strike-message").innerText = "Ai verificat planta azi!";
+    } else {
+      // Update the streak and last checked date
+      if (lastChecked) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        if (lastChecked === yesterday.toDateString()) {
+          streak++; // Increment the streak if the last check was yesterday
+        } else {
+          streak = 1; // Reset the streak if the last check was not yesterday
+        }
+      } else {
+        streak = 1; // Start a new streak if this is the first check
+      }
+  
+      localStorage.setItem("lastChecked", today); // Save today's date as the last checked date
+      localStorage.setItem("streak", streak); // Save the updated streak
+      document.getElementById("strike-message").innerText = "Foarte bine! Planta e încă în viață!";
+    }
+  
+    // Update the streak count in the UI
+    document.getElementById("streak").innerText = streak;
+  
+    // Update the week container
+    updateWeekContainer(streak);
+  }
+  
+  // Function to update the week container
+  function updateWeekContainer(streak) {
+    const days = document.querySelectorAll(".week-days .day");
+    days.forEach((day, index) => {
+      if (index < streak) {
+        day.classList.add("checked"); // Mark the day as checked
+      } else {
+        day.classList.remove("checked"); // Unmark the day
+      }
+    });
+  }
+  
+  // Initialize the streak count and week container on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const streak = parseInt(localStorage.getItem("streak")) || 0;
+    document.getElementById("streak").innerText = streak;
+    updateWeekContainer(streak);
+  });
