@@ -1,4 +1,4 @@
-<!-------------------------------PLANT-SLIDER------------------------------------------------>
+/* <!-------------------------------PLANT-SLIDER------------------------------------------------> */
 * {
   margin: 0;
   padding: 0; 
@@ -10,6 +10,7 @@
   width: 100%;
   padding: 40px 0;
   margin-bottom: 80px;
+  height: 450px;
 }
 .slide-content{
   margin: 0 40px;
@@ -115,9 +116,11 @@
 }
 .swiper-button-next{
   right: 0;
+  top:50%
 }
 .swiper-button-prev{
   left: 0;
+  top:50%
 }
 @media screen and (max-width: 768px) {
   .slide-content{
@@ -127,7 +130,7 @@
     display: none;
   }
 }
-/* ---------------------------------PLANT-SLIDER-pop-up----------------------------------------------> */
+/* ---------------------------------PLANT-SLIDER-pop-up------------------------------------> */
 /* Popup container styling */
 .popup {
   position: fixed;
@@ -186,7 +189,7 @@
 .close-btn:hover {
   color: #ff0000; /* Change color to red on hover */
 }
-/* ---------------------------------container----------------------------------------------> */
+/* ---------------------------------section1----------------------------------------------> */
 /* Section1 styling */
 .section1 {
   display: flex; /* Use flexbox to align image and text side by side */
@@ -197,7 +200,6 @@
   background-color: #cfcdb5;
   position: relative;
 }
-
 .container {
   flex: 1; /* Allow the image container to take up equal space */
   height: 100%; /* Match the height of the section */
@@ -206,14 +208,12 @@
   align-items: center;
   position: relative;
 }
-
 .container img {
   height: 100%; /* Match the height of the section */
   width: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure the image covers the container */
   border-radius: 0; /* Remove rounded corners */
 }
-
 .container .overlay_c {
   position: absolute;
   top: 0;
@@ -224,11 +224,9 @@
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease; /* Smooth transition */
 }
-
 .container:hover .overlay_c {
   opacity: 1; /* Show overlay only when hovering over the image */
 }
-
 .container .text {
   color: #fff;
   font-size: 40px;
@@ -238,52 +236,47 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
 .text_section {
   flex: 1; /* Allow the text section to take up equal space */
   padding: 20px;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #333;
   line-height: 1.6;
   text-align: justify; /* Justify the text */
 }
-
 .text_section h1 {
-  font-size: 1.8rem; /* Make the h1 text smaller */
+  font-size: 1.7rem; /* Make the h1 text smaller */
   font-weight: 600;
   margin-bottom: 15px;
 }
-/* <!------------------------------------PLANT-STRIKE---------------------------------------------------> */
+/* <!------------------------------------section2---------------------------------------------------> */
 /* Strike container styling */
-.strike-container {
-  background-color: #e8f5e9; /* Light green background */
-  border: 2px solid #81c784; /* Medium green border */
-  border-radius: 15px; /* Rounded corners */
+ .strike-container {
+  background-color: #e8f5e9;
+  border: 2px solid #81c784; 
+  border-radius: 15px; 
   padding: 20px;
   text-align: center;
   max-width: 400px;
   margin: 20px auto;
 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
-
 .strike-container h2 {
   font-size: 26px;
-  color: #388e3c; /* Dark green text */
+  color: #388e3c; 
   margin-bottom: 10px;
   font-family: 'Poppins', sans-serif;
 }
-
 .strike-container p {
   font-size: 18px;
-  color: #2e7d32; /* Slightly darker green */
+  color: #2e7d32; 
   margin: 10px 0;
   font-family: 'Poppins', sans-serif;
 }
-
 .strike-container button {
-  background-color: #66bb6a; /* Vibrant green */
+  background-color: #66bb6a; 
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -293,140 +286,182 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: 'Poppins', sans-serif;
 }
-
 .strike-container button:hover {
-  background-color: #388e3c; /* Darker green on hover */
-  transform: scale(1.05); /* Slight zoom effect */
-}
-
+  background-color: #388e3c; 
+  transform: scale(1.05); 
+} 
 /* Week container styling */
 .week-container {
   margin-top: 20px;
   text-align: center;
 }
-
 .week-container h3 {
   font-size: 20px;
-  color: #388e3c; /* Dark green */
+  color: #388e3c; 
   margin-bottom: 15px;
   font-family: 'Poppins', sans-serif;
 }
-
 .week-days {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-
 .day {
   width: 50px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f8e9; /* Light greenish-yellow */
-  border: 2px solid #aed581; /* Soft green border */
+  background-color: #f1f8e9; 
+  border: 2px solid #aed581; 
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
-  color: #558b2f; /* Olive green text */
+  color: #558b2f; 
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: 'Poppins', sans-serif;
 }
-
 .day.checked {
-  background-color: #66bb6a; /* Vibrant green for checked days */
-  color: #fff; /* White text for checked days */
-  transform: scale(1.1); /* Slight zoom effect for checked days */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow for checked days */
+  background-color: #66bb6a; 
+  color: #fff; 
+  transform: scale(1.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.day:hover {
+  background-color: #aed581; 
+  transform: scale(1.05); 
 }
 
-.day:hover {
-  background-color: #aed581; /* Softer green on hover */
-  transform: scale(1.05); /* Slight zoom effect */
+/* Section2 styling */
+.section2 {
+  display: flex; /* Use flexbox to align image and content side by side */
+  align-items: flex-start; /* Align items at the top */
+  height: 800px; /* Allow height to adjust based on content */
+  margin-bottom: 120px;
+  width: 100%;
+  background-color: #74a462; /* Light green background */
+  position: relative;
 }
+.content-container {
+  flex: 1; /* Allow the content container to take up equal space */
+  display: flex;
+  flex-direction: column; /* Stack text and strike-container vertically */
+  padding: 20px;
+}
+.text_section2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify; /* Justify the text */
+  margin-bottom: 40px; /* Add space below the text section */
+}
+.text_section2 h1 {
+  font-size: 1.85rem; /* Make the h1 text smaller */
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+.container2 {
+  flex: 1; /* Allow the image container to take up equal space */
+  height: 100%; /* Match the height of the section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container2 img {
+  height: 100%; /* Match the height of the section */
+  width: 100%; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+  border-radius: 0; /* Remove rounded corners */
+}
+.container2 .text {
+  color: #fff;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container2 .overlay_c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+.container2:hover .overlay_c2 {
+  opacity: 1; /* Show overlay only when hovering over the image */
+}
+
 
 */ <!---------------------------------FORM----------------------------------------------> */
-.container_form {
+
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+}
+/* Background section styling */
+.background-section {
+  background-image: url('../photos/plant4.jpg'); /* Path to plant4.jpg */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 600px; /* Set the height of the section */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the form horizontally */
+  align-items: center; /* Center the form vertically */
+  position: relative; /* Position relative for stacking */
+}
+
+/* Form container styling */
+.form-container {
   justify-content: center;
   position: relative; /* Change from absolute to relative */
   margin: 40px auto; /* Center the form horizontally and add space above */
-  width: 70%;
+  width: 50%;
   background: #f0f0f0;
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
-.container_form header {
-  font-size: 1.5rem;
+
+.form-container header {
+  font-size: 1.8rem;
   color: #333;
-  font-weight: 500;
-  text-align: center;
-}
-.container_form .form {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.form {
-  width: 30%;
-  margin-top: 20px;
-  margin-left: 35%;
-}
-.input-box label {
-  color: #333;
-}
-.form :where(.input-box input, .select-box) {
-  position: relative;
-  height: 50px;
-  width: 100%;
-  outline: none;
-  font-size: 1rem;
-  color: #707070;
-  margin-top: 8px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 0 15px;
-}
-.input-box input:focus {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.form .gender-box {
-  margin-top: 20px;
-}
-.gender-box h3 {
-  color: #333;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
-.form :where(.gender-option, .gender) {
+.form-container .form {
   display: flex;
-  align-items: center;
-  column-gap: 50px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between form elements */
 }
-.form .gender {
-  column-gap: 5px;
-}
-.gender input {
-  accent-color: #7A8054;
-}
-.form :where(.gender input, .gender label) {
-  cursor: pointer;
-}
-.gender label {
-  color: #707070;
-}
-.select-box select {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  color: #707070;
+
+.input-box label {
   font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
 }
-.form button {
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
   height: 55px;
   width: 100%;
   color: #fff;
@@ -438,15 +473,7 @@
   transition: all 0.2s ease;
   background: #7A8054;
 }
-.form button:hover {
-  background: #4e5235;
-}
-/*Responsive*/
-@media screen and (max-width: 500px) {
-  .form .column {
-    flex-wrap: wrap;
-  }
-  .form :where(.gender-option, .gender) {
-    row-gap: 15px;
-  }
+
+button:hover {
+  background-color: #4e5235;
 }

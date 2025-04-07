@@ -21,7 +21,7 @@
         <a href="depre_noi.html">Despre noi</a>
     </nav>
     </div>
-    <!------------------------------------container--------------------------------------------------->
+    <!------------------------------------section1----------------------------------------------->
     <div class="section1">
       <div class="container">
         <img src="../photos/plant1.jpg" alt="Plant Image">
@@ -94,23 +94,47 @@
         <h2 class="name">PLANTA PAIANJEN</h2>
         <p class="description">Rezistentă, purificatoare, adaptabilă.</p>
         <!-- Retain the "Vezi" button -->
-        <button class="button" >Vezi</button>
+        <button id="plant2" class="button" onclick="showData()">Vezi</button>
       </div>
     </div>
     <!----------PLANT3--------------------------------------------------------------------->
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-                <div class="card-image">
-                  <img src="../photos/D_N_3.jpg" alt="" class="card-img">
-                </div>
-              </div>
-              <div class="card-content">
-                <h2 class="name">PLANT3 </h2>
-                <p class="description">DESCRIPTION</p>
-                <button class="button">Vezi</button>
-              </div>
-            </div>
+    <div class="card swiper-slide">
+      <div class="image-content">
+        <span class="overlay"></span>
+        <div class="card-image">
+          <!-- Image acts as a button for the popup -->
+          <img src="../photos/limba_soacrei.jpg" alt="Plant 2" class="card-img" onclick="showPopup('../photos/limba_soacrei.jpg', `
+          <h2>🪴 Nume Limba soacrei</h2>
+          <p><strong>Nume popular:</strong> Limba soacrei</p>
+          <p><strong>Nume științific:</strong> Sansevieria trifasciata</p>
+          <p><strong>Nume în engleză:</strong> Snake Plant</p>
+          <h3>🌍 Origine</h3>
+          <p>Provine din Africa de Vest și Centrala</p>
+          <p>Plantele Sansevieria sunt foarte rezistente și se adaptează bine condițiilor de interior</p>
+          <h3>🌱 Descriere</h3>
+          <p>Frunze lungi, drepte, verzi sau cu dungi galbene, crescând vertical</p>
+          <p>Aspectul lor în formă de sabie le conferă un stil unic, potrivit oricărei camere</p>
+          <h3>🧑‍🌾 Mod de îngrijire</h3>
+          <p><strong>☀️ Lumină:</strong> Se adaptează la o gamă largă de condiții de lumină, inclusiv semi-umbra. Preferă lumina indirectă, dar poate tolera și zone mai întunecate.</p>
+          <p><strong>💧 Udare:</strong> Necesită puțină apă – este rezistentă la secetă, așa că se udă doar atunci când solul este complet uscat - Vara: o dată la 10 zile - Iarna: mai rar, o dată pe lună</p>
+          <p><strong>🌡️ Temperatură:</strong> Ideal între 18–27°C. Toleranță la temperaturi mai scăzute, dar nu sub 10°C.</p>
+          <p><strong>🌬️ Umiditate:</strong> Nu este foarte pretențioasă în privința umidității și poate supraviețui într-un aer mai uscat.</p>
+          <h3>🌿 Înmulțire</h3>
+          <p>Ușor de înmulțit prin butășire – taie o frunză și plantează-o în apă sau pământ.</p>
+          <h3>🪴 Sol și ghiveci</h3>
+          <p>Preferă un sol bine drenat și un ghiveci cu drenaj adecvat.</p>
+          <h3>✅ Alte beneficii</h3>
+          <p>Purifică aerul – elimină toxine precum formaldehida și benzenul. Non-toxică pentru animale și copii.</p>
+          `)">
+        </div>
+      </div>
+      <div class="card-content">
+        <h2 class="name">LIMBA SOACREI</h2>
+        <p class="description">Ușor de întreținut.</p>
+        <!-- Retain the "Vezi" button -->
+        <button id="plant3" class="button" onclick="showData()">Vezi</button>
+      </div>
+    </div>
     <!----------PLANT4--------------------------------------------------------------------->
             <div class="card swiper-slide">
               <div class="image-content">
@@ -153,80 +177,60 @@
     <script src="../js/swipe.js"></script>
 
     <!------------------------------------PLANT-STRIKE--------------------------------------------------->
-    <div class="strike-container">
-      <h2>🌱Planta ta te așteaptă la control</h2>
-      <p id="strike-message">Planta ta: vie, moartă sau în comă botanică?</p>
-      <button id="check-plant-button" onclick="checkPlant()">✅ Check Planta</button>
-      <div id="week-container" class="week-container">
-        <h3>🌟 Progres săptămânal</h3>
-        <div class="week-days">
-          <div class="day" id="day-1">Lun</div>
-          <div class="day" id="day-2">Mar</div>
-          <div class="day" id="day-3">Mie</div>
-          <div class="day" id="day-4">Joi</div>
-          <div class="day" id="day-5">Vin</div>
-          <div class="day" id="day-6">Sam</div>
-          <div class="day" id="day-7">Dum</div>
+    <div class="section2">
+      <div class="content-container">
+        <div class="text_section2">
+          <h1 style="color: #e8f5e9;">Planta ta are nevoie de îngrijire constantă</h1><br>
+          <p>Îngrijirea constantă a plantelor este esențială pentru sănătatea lor pe termen lung. Prin aplicarea regulată a îngrijirii (apă, lumină, sol, etc.), asigurăm că planta rămâne viguroasă și frumoasă, în ciuda schimbărilor de mediu. Ignorarea nevoilor plantei poate duce la stres, îmbolnăvire sau moarte prematură. Astfel, un <b>efort zilnic</b> de monitorizare și îngrijire este cheia unei plante fericite și sănătoase. <br><br><b><em style="color:#38573a; font-size: 20px;" > Fără un check constant, planta ta riscă să își piardă vitalitatea!</em></b></style></p>
+        </div>
+        <div class="strike-container">
+          <h2>🌱 Planta ta te așteaptă la control</h2>
+          <p id="strike-message">Planta ta: vie, moartă sau în comă botanică?</p>
+          <button id="check-plant-button" onclick="checkPlant()">✅ Check Planta</button>
+          <div id="week-container" class="week-container">
+            <h3>🌟 Progres săptămânal</h3>
+            <div class="week-days">
+              <div class="day" id="day-1">Lun</div>
+              <div class="day" id="day-2">Mar</div>
+              <div class="day" id="day-3">Mie</div>
+              <div class="day" id="day-4">Joi</div>
+              <div class="day" id="day-5">Vin</div>
+              <div class="day" id="day-6">Sam</div>
+              <div class="day" id="day-7">Dum</div>
+            </div>
+          </div>
+          <p id="strike-count">Zile supraviețuite: <span id="streak">0</span></p>
         </div>
       </div>
-      <p id="strike-count">Zile supraviețuite: <span id="streak">0</span></p>
+      <div class="container2">
+        <img src="../photos/plant5.jpg" alt="Plant Image">
+        <div class="overlay_c2">
+          <div class="text">„Fiecare zi este o oportunitate de a îngriji și a învăța despre planta ta.”</div>
+        </div>
+      </div>
     </div>
     <!------------------------------------FORM--------------------------------------------------->
-      <section class="container_form">
-        <header>PLANTA MEA</header>
-        <form action="#" class="form">
-          <div class="input-box">
-            <label>Nume si prenume:</label>
-            <input type="text" placeholder="Introdu numele si prenumele" required />
-          </div>
-          <div class="input-box">
-            <label>Specia:</label>
-            <input type="text" placeholder="Introdu specia plantei" required />
-          </div>
-          <div class="input-box">
-            <label>Ziua de nastere:</label>
-            <input type="date" placeholder="Introdu ziua de nastere" required />
-          </div>
-          <div class="gender-box">
-            <h3>Genul:</h3>
-            <div class="gender-option">
-              <div class="gender">
-                <input type="radio" id="check-male" name="gender" checked />
-                <label for="check-male">Barbat</label>
-              </div>
-              <div class="gender">
-                <input type="radio" id="check-female" name="gender" />
-                <label for="check-female">Femeie</label>
-              </div>
+      <div class="background-section">
+        <div class="form-container">
+          <header>PLANTA MEA</header>
+          <form action="#" class="form">
+            <div class="input-box">
+              <label>Nume:</label>
+              <input type="text" placeholder="Introdu numele plantei" required />
             </div>
-          </div>
-          <button>Adauga planta</button>
-        </form>
-      </section>
-    <!-- <form>
-        <fieldset>
-            <legend>Planta mea</legend>
-            <label for="name">Nume:</label>
-            <input type="text" id="name" name="name" required />
-            <label for="plant_species">Specie:</label><br>
-            <input type="text" id="plant_species" name="plant_species">
-            <label>Sexul:</label>
-            <div class="gender-group">
-                <input type="radio" name="gender" value="male" id="male" required />
-                <label for="male">Masculin</label>
-                <input type="radio" name="gender" value="female" id="female" />
-                <label for="female">Feminin</label>
+            <div class="input-box">
+              <label>Specia:</label>
+              <input type="text" placeholder="Introdu specia plantei" required />
             </div>
-            <label for="dob">Data nasterii:</label>
-            <input type="date" id="dob" name="dob" required />
-            <label for="password">Parola:</label>
-            <input type="password" id="password" name="pass" required />
-            <label for="confirmPassword">Confirma parola:</label>
-            <input type="password" id="confirmPassword" name="confirmPass" required />
-            <input type="submit" value="Adauga" />
-        </fieldset>
-    </form> -->
-    <br><br>
+            <div class="input-box">
+              <label>Ziua de nastere:</label>
+              <input type="date" placeholder="Introdu ziua de nastere" required />
+            </div>
+            <button type="submit">Trimite</button>
+          </form>
+        </div>
+      </div>
+    <br><br><br><br><br><br><br>
     <!------------------------------------FOOTER------------------------------------------------->
     <div class="footer">
         <div class="container_f">
