@@ -21,7 +21,7 @@ function createDataDiv() {
     
     var chartCanvas = document.createElement("canvas");
     chartCanvas.setAttribute("id", "temperatureChart");
-    
+
     const mainDiv = document.querySelector(".card-content");
     mainDiv.appendChild(data); // Append the data div to the main div
     mainDiv.appendChild(chartCanvas); // Append the chart canvas to the main div
@@ -110,3 +110,45 @@ TO DO:
 
     onst response = await fetch('https://randomstring.ngrok.io/temperature');
 */
+
+// Define the showPopup function in the global scope
+function showPopup(imageSrc, description) {
+    const popupContainer = document.getElementById("popup-container");
+    const popupImage = document.getElementById("popup-image");
+    const popupDescription = document.getElementById("popup-description");
+  
+    popupImage.src = imageSrc; // Set the popup image source
+    popupDescription.innerHTML = description; // Set the popup description (supports HTML content)
+    popupContainer.classList.remove("hidden"); // Show the popup
+  }
+  
+  // Ensure the DOM is fully loaded before creating the popup container
+  document.addEventListener("DOMContentLoaded", () => {
+    const popupContainer = document.createElement("div");
+    popupContainer.id = "popup-container";
+    popupContainer.classList.add("popup", "hidden");
+  
+    popupContainer.innerHTML = `
+      <div class="popup-content">
+        <span id="close-popup" class="close-btn">&times;</span>
+        <img id="popup-image" src="" alt="Plant Image" />
+        <p id="popup-description"></p>
+      </div>
+    `;
+  
+    document.body.appendChild(popupContainer);
+  
+    const closePopup = document.getElementById("close-popup");
+  
+    // Close the popup when the close button is clicked
+    closePopup.addEventListener("click", () => {
+      popupContainer.classList.add("hidden");
+    });
+  
+    // Close the popup when clicking outside the popup content
+    popupContainer.addEventListener("click", (event) => {
+      if (event.target === popupContainer) {
+        popupContainer.classList.add("hidden");
+      }
+    });
+  });

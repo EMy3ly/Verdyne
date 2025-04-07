@@ -138,6 +138,70 @@
     display: none;
   }
 }
+/* ---------------------------------PLANT-SLIDER-pop-up----------------------------------------------> */
+/* Popup container styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.popup.hidden {
+  display: none; /* Hide the popup when the "hidden" class is applied */
+}
+
+/* Popup content styling */
+.popup-content {
+  background: #fff; /* White background for the popup content */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left; /* Align text to the left */
+  max-width: 600px; /* Set a maximum width for the popup */
+  max-height: 80%; /* Limit the height to 80% of the viewport */
+  width: 90%;
+  overflow-y: auto; /* Add a vertical scrollbar when content overflows */
+  position: relative; /* For positioning the close button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Popup image styling */
+.popup-content img {
+  max-width: 100%; /* Ensure the image fits within the popup */
+  height: auto;
+  border-radius: 10px; /* Rounded corners for the image */
+  margin-bottom: 15px; /* Add spacing below the image */
+}
+
+/* Popup description styling */
+.popup-content p {
+  font-size: 16px;
+  color: #333; /* Dark text color */
+  margin: 0 0 10px; /* Add spacing between paragraphs */
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Close button styling */
+.close-btn {
+  position: absolute;
+  top: 6px; /* Adjust position to avoid overlapping with content */
+  right: 8px; /* Keep it aligned to the right */
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e7d32; /* Dark green color for the close button */
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.close-btn:hover {
+  color: #ff0000; /* Change color to red on hover */
+}
 /* ---------------------------------container----------------------------------------------> */
 .text_section {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
