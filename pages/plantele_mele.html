@@ -55,6 +55,11 @@
                 <h2 class="name">PLANT1</h2>
                 <p class="description">DESCRIPTION</p>
                 <button id="plant1" class="button" onclick="showData()">Vezi</button>
+                <div id="data">
+                  <p id="temp">Temperature: ---</p>
+                  <p id="humi">Humidity: ---</p>
+                </div>
+                <canvas id="combinedChart" width="400" height="200"></canvas>
               </div>
             </div>
     <!----------PLANT2--------------------------------------------------------------------->
@@ -253,6 +258,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/plant_reader.js"></script>
 </body>
 </html>

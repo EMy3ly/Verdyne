@@ -1,7 +1,9 @@
 var flag = false; // Flag to check if the data is already displayed
 var temperatureArray = []; // Array to store temperature values
+var humidityArray = []; // Array to store humidity values
 var labelsArray = []; // Array to store timestamps for the chart
 var temperatureChart; // Chart.js instance
+var combinedChart; // Combined chart instance
 
 console.log("plant_reader.js loaded"); // Debugging line
 
@@ -32,74 +34,82 @@ function createDataDiv() {
 
 async function fetchTemperature() {
     try {
-        const response = await fetch('https://ed6e08a16c8e3b663d0558a6e841cb5f.serveo.net/measurements');
+        const response = await fetch('https://b1bcc81231b081dd94721f64ae730f1a.serveo.net/measurements'); // Replace with your server URL
         const data = await response.json();
-        document.getElementById('temp').innerText = "Temperature: " + data.temperature;
-        document.getElementById('humi').innerText = "Humidity: " + data.humidity;
+        document.getElementById('temp').innerText = "Temperature: " + data.temperature + "°C";
+        document.getElementById('humi').innerText = "Humidity: " + data.humidity + "%";
 
         // Store the temperature value and timestamp
         temperatureArray.push(data.temperature);
+        humidityArray.push(data.humidity);
         labelsArray.push(new Date().toLocaleTimeString());
 
         // Update the chart
-        if (temperatureChart) {
-            temperatureChart.update();
+        if (combinedChart) {
+          combinedChart.update();
         }
     } catch (error) {
         console.error('Error fetching temperature:', error);
     }
 }
 
-function initializeChart() {
-    const ctx = document.getElementById('temperatureChart').getContext('2d');
-    temperatureChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labelsArray, // Timestamps
-            datasets: [{
-                label: 'Temperature (°C)',
-                data: temperatureArray, // Temperature values
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                fill: true,
-                tension: 0.4
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: true
-                }
-            },
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Time'
-                    }
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Temperature (°C)'
-                    }
-                }
-            }
-        }
-    });
+function initializeCombinedChart() {
+  const ctx = document.getElementById('combinedChart').getContext('2d');
+  combinedChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: labelsArray, // Timestamps
+          datasets: [
+              {
+                  label: 'Temperature (°C)',
+                  data: temperatureArray, // Temperature values
+                  borderColor: 'rgba(255, 99, 132, 1)',
+                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                  fill: true,
+                  tension: 0.4
+              },
+              {
+                  label: 'Humidity (%)',
+                  data: humidityArray, // Humidity values
+                  borderColor: 'rgba(54, 162, 235, 1)',
+                  backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                  fill: true,
+                  tension: 0.4
+              }
+          ]
+      },
+      options: {
+          responsive: true,
+          plugins: {
+              legend: {
+                  display: true
+              }
+          },
+          scales: {
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Time'
+                  }
+              },
+              y: {
+                  title: {
+                      display: true,
+                      text: 'Values'
+                  }
+              }
+          }
+      }
+  });
 }
 
-function showData() { 
-    console.log(flag); // Debugging line
-    if (!flag) {
-        flag = true; // Set the flag to true to prevent multiple calls
-        createDataDiv(); // Create the data div only once
-    }
-    setInterval(fetchTemperature, 2000); // Update every 5 sec
-    fetchTemperature();
+function showData() {
+  if (!combinedChart) { // Prevent multiple initializations
+      initializeCombinedChart(); // Initialize the graph
+  }
+  fetchTemperature(); // Fetch data immediately
+  setInterval(fetchTemperature, 10000); // Fetch data every 2 seconds
 }
-
 
 
 /*
