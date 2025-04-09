@@ -10,7 +10,7 @@
   width: 100%;
   padding: 40px 0;
   margin-bottom: 80px;
-  height: 450px;
+  height: 500px;
 }
 .slide-content{
   margin: 0 40px;
@@ -150,16 +150,16 @@
 }
 /* Popup content styling */
 .popup-content {
-  background: #fff; /* White background for the popup content */
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
-  text-align: left; /* Align text to the left */
-  max-width: 600px; /* Set a maximum width for the popup */
-  max-height: 80%; /* Limit the height to 80% of the viewport */
-  width: 90%;
-  overflow-y: auto; /* Add a vertical scrollbar when content overflows */
-  position: relative; /* For positioning the close button */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  width: 80%; /* Increase width to make the popup larger */
+  max-width: 800px; /* Set a maximum width */
+  height: 80%; /* Increase height to make the popup larger */
+  max-height: 80%; /* Set a maximum height */
+  overflow-y: auto; /* Add scroll if content overflows */
+  position: relative;
+  text-align: center;
 }
 /* Popup image styling */
 .popup-content img {
@@ -188,6 +188,11 @@
 }
 .close-btn:hover {
   color: #ff0000; /* Change color to red on hover */
+}
+/* Adjust the canvas for the graph */
+#combinedChart {
+  width: 100%; /* Make the graph take the full width of the popup */
+  height: 100%; /* Adjust height to fit the popup */
 }
 /* ---------------------------------section1----------------------------------------------> */
 /* Section1 styling */

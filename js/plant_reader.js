@@ -5,6 +5,8 @@ var labelsArray = []; // Array to store timestamps for the chart
 var temperatureChart; // Chart.js instance
 var combinedChart; // Combined chart instance
 
+
+
 console.log("plant_reader.js loaded"); // Debugging line
 
 function createDataDiv() {
@@ -110,7 +112,6 @@ function showData() {
   fetchTemperature(); // Fetch data immediately
   setInterval(fetchTemperature, 10000); // Fetch data every 2 seconds
 }
-
 
 /*
 TO DO:
