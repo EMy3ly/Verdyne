@@ -36,7 +36,7 @@ function createDataDiv() {
 
 async function fetchTemperature() {
     try {
-        const response = await fetch('https://b1bcc81231b081dd94721f64ae730f1a.serveo.net/measurements'); // Replace with your server URL
+        const response = await fetch('https://346a187bccba8a5ef18ef981b02d94dc.serveo.net/measurements'); // Replace with your server URL
         const data = await response.json();
         document.getElementById('temp').innerText = "Temperature: " + data.temperature + "°C";
         document.getElementById('humi').innerText = "Humidity: " + data.humidity + "%";
@@ -110,7 +110,7 @@ function showData() {
       initializeCombinedChart(); // Initialize the graph
   }
   fetchTemperature(); // Fetch data immediately
-  setInterval(fetchTemperature, 10000); // Fetch data every 2 seconds
+  setInterval(fetchTemperature, 5000); // Fetch data every 2 seconds
 }
 
 /*
