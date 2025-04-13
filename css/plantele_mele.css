@@ -130,6 +130,9 @@
     display: none;
   }
 }
+.hidden {
+  display: none!important;
+}
 /* ---------------------------------PLANT-SLIDER-pop-up------------------------------------> */
 /* Popup container styling */
 .popup {

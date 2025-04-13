@@ -106,6 +106,21 @@ function initializeCombinedChart() {
 }
 
 function showData() {
+  const dataContainer = document.getElementById("data"); // The container holding temperature, humidity, and graph
+  const chartCanvas = document.getElementById("combinedChart"); // The chart canvas
+
+  // Check if the data container is currently visible
+  if (!dataContainer.classList.contains("hidden")) {
+    // Hide the data container and graph
+    dataContainer.classList.add("hidden");
+    chartCanvas.classList.add("hidden");
+    return;
+  }
+
+  // Show the data container and graph
+  dataContainer.classList.remove("hidden");
+  chartCanvas.classList.remove("hidden");
+
   if (!combinedChart) { // Prevent multiple initializations
       initializeCombinedChart(); // Initialize the graph
   }
