@@ -128,6 +128,11 @@ function showData() {
   setInterval(fetchTemperature, 5000); // Fetch data every 2 seconds
 }
 
+// Automatically call showData when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  showData();
+});
+
 /*
 TO DO:
  - ngrock pe rpi

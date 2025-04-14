@@ -1,0 +1,134 @@
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7A8054;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #4e5235;
+  }
+  .text {
+    font-size: 1.2rem; /* Set the font size for the text */
+    color: #333; /* Dark gray color for the text */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 20px; /* Add spacing below the text */
+    text-align: center; /* Center the text horizontally */
+  }
+  .card-content {
+    width: 80%;
+    margin: 0 auto; /* Center the card content */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .container {
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the child elements */
+    align-items: center; /* Align items vertically in the center */
+    gap: 20px; /* Add spacing between child elements */
+  }
+  
+  .row {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between columns */
+  }
+  
+  .col_1 {
+    flex: 1; /* Allow the column to take up equal space */
+    padding: 10px; /* Add padding inside the column */
+  }
+  
+  h1 {
+    font-size: 2rem; /* Set the font size for the heading */
+    color: #4e5235; /* Dark green color for the heading */
+    font-weight: bold; /* Make the heading bold */
+    text-align: center; /* Center the heading horizontally */
+    margin-top: 50px; /* Add spacing above the heading */
+    margin-bottom: 15px; /* Add spacing below the heading */
+  }
+  
+  .col_1 p {
+    font-size: 1rem; /* Set the font size for the paragraph */
+    color: #333; /* Dark gray color for the text */
+    line-height: 1.6; /* Improve readability */
+  }
+  
+  .col_2 {
+    flex: 1; /* Allow the column to take up equal space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+  }
+  
+  .col_2 img {
+    max-width: 100%; /* Ensure the image does not exceed the column width */
+    height: auto; /* Maintain the aspect ratio of the image */
+  }
+  h2 {
+    font-size: 1.2rem; /* Make the text smaller */
+    font-weight: 500; /* Adjust the font weight for a lighter appearance */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #4e5235; /* Use the same dark green color for consistency */
+  }
+  
+  p {
+    font-size: 0.9rem; /* Make the paragraph text smaller */
+    color: #4e5235; /* Use the same dark green color for consistency */
+    line-height: 1.5; /* Adjust line height for readability */
+  }
+  strong {
+    color: #4e5235; /* Use the same dark green color for consistency */
+    font-weight: bold; /* Keep the bold styling */
+  }
+  .col_2 {
+    
+    flex: 1; /* Allow the column to take up equal space */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align content to the left */
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  .col_2 table {
+    width: 100%; /* Make the table take up the full width */
+    border-collapse: collapse; /* Merge table borders for a cleaner look */
+    margin-top: 10px; /* Add spacing above the table */
+  }
+  
+  .col_2 table th,
+  .col_2 table td {
+    border: 1px solid #4e5235; /* Add a dark green border to table cells */
+    padding: 10px; /* Add padding inside the cells */
+    text-align: left; /* Align text to the left */
+    color: #4e5235; /* Use the same dark green color for text */
+  }
+  
+  .col_2 table th {
+    background-color: #f0f0f0; /* Light background for table headers */
+    font-weight: bold; /* Make header text bold */
+  }
+  
+  .col_2 table td {
+    background-color: #fff; /* White background for table cells */
+  }
+  
+  .col_2 ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  ul li {
+    margin-bottom: 10px; /* Add spacing between list items */
+    color: #4e5235; /* Use the same dark green color for consistency */
+  }

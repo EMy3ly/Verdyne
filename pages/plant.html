@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planta mea</title>
+    <link rel="stylesheet" href="../css/plantele_mele.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/plant.css">
+
+    <script src="../js/plant_reader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!------------------------------------HEADER------------------------------------------------->
+    <div class="welcoming">
+        <nav class="navbar">
+       <a href="../index.html">Acasa</a>
+       <a href="plantele_mele.html">Plantele mele</a>
+       <a href="depre_noi.html">Despre noi</a>
+   </nav>
+   </div>
+   
+    <!------------------------------------HEADER------------------------------------------------->
+    <div class="text">
+        <h1 style="margin-top: 5%;">Planta mea</h1><br>
+        <p>Datele înregistrate de senzorul de umiditate și temperatură din aer.</p>
+    </div>
+    <div class="card-content">
+        <div id="data">
+            <p id="temp">Temperature: ---</p>
+            <p id="humi">Humidity: ---</p>
+        </div>
+        <canvas id="combinedChart" width="400" height="200"></canvas>
+    </div>
+    <h1>SENZOR DE UMIDITATE ȘI TEMPERATURĂ</h1>
+    <div class="container"> 
+        <div class="row">
+            <div class="col_1">
+                <p><strong>Nume complet:</strong><a href="https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf"> DHT11 </a> – Senzor digital de temperatură și umiditate</p>
+                <p><strong>Tip senzor:</strong> Combină un senzor de umiditate de tip rezistiv cu un NTC pentru temperatură</p>
+                <p><strong>Ieșire:</strong> Semnal digital calibrat</p>
+                <p><strong>Interfață:</strong> Comunicație pe un singur fir (single-wire)</p>
+                <p><strong>Microcontroler integrat:</strong> 8-bit</p>
+                <p><strong>Calibrare:</strong> Fiecare senzor este calibrat individual în laborator, coeficienții fiind stocați în memoria OTP</p>
+                <br>
+                <h2>📊 Specificații Tehnice</h2>
+                <br>
+                <h3><strong><em>Umiditate:</em></strong></h3><br>
+                <ul>
+                    <li><strong>Domeniu de măsurare:</strong> 20% – 90% RH</li>
+                    <li><strong>Acuratețe:</strong> ±5% RH</li>
+                    <li><strong>Rezoluție:</strong> 1% RH</li>
+                    <li><strong>Repetabilitate:</strong> ±1% RH</li>
+                    <li><strong>Timp de răspuns:</strong> 6 – 15 secunde</li>
+                    <li><strong>Stabilitate pe termen lung:</strong> ±1% RH/an</li>
+                </ul><br>
+                <h3><strong><em>Temperatură:</em></strong></h3><br>
+                <ul>
+                    <li><strong>Domeniu de măsurare:</strong> 0°C – 50°C</li>
+                    <li><strong>Acuratețe:</strong> ±2°C</li>
+                    <li><strong>Rezoluție:</strong> 1°C</li>
+                    <li><strong>Repetabilitate:</strong> ±1°C</li>
+                    <li><strong>Timp de răspuns:</strong> 6 – 30 secunde</li>
+                </ul>
+                <br>
+                <h2>⚙️ Alimentare și Conectivitate</h2>
+                <ul>
+                    <li><strong>Tensiune de alimentare:</strong> 3V – 5.5V DC</li>
+                    <li><strong>Consum de curent:</strong> 0.3 mA (măsurare), 60 µA (standby)</li>
+                    <li><strong>Interfață de date:</strong> Semnal digital pe un singur fir</li>
+                    <li><strong>Lungime maximă a cablului:</strong> Până la 20 metri (cu rezistor de pull-up adecvat)</li>
+                    <li><strong>Recomandare:</strong> Adăugarea unui condensator de 100 nF între VDD și GND pentru filtrarea alimentării</li>
+                </ul>
+                <br>
+                
+            </div>
+            <div class="col_2">
+                <h2>🧩 Configurație Pinuri</h2>
+                <table>
+                    <tr>
+                        <th>Pin</th>
+                        <th>Funcție</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>VCC (3V – 5.5V)</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Data (semnal)</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>NC (neconectat)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>GND (masă)</td>
+                    </tr>
+                </table>
+                <br>
+                <h2>📐 Dimensiuni Fizice</h2>
+                <ul>
+                    <li><strong>Dimensiuni:</strong> 15.5 mm x 12 mm x 5.5 mm</li>
+                    <li><strong>Greutate:</strong> Aproximativ 2.7 g</li>
+                    <li><strong>Pachet:</strong> 4 pini într-un singur rând</li>
+                </ul>
+                <br>
+                <h2>📌 Aplicații Tipice</h2>
+                <ul>
+                    <li>Stații meteo locale</li>
+                    <li>Controlul automat al climatului</li>
+                    <li>Monitorizarea mediului</li>
+                    <li>Sisteme de automatizare a locuinței</li>
+                </ul>
+                <!-- <img src="../photos/plant.jpg" alt="plant" width="300px" height="300px"> -->
+            </div>
+        </div>
+    </div>
+    <!------------------------------------FOOTER------------------------------------------------->
+    <div class="footer">
+        <div class="container_f">
+            <div class="row">
+                <div class="footer_col">
+                    <h3>Continut</h3>
+                    <ul>
+                        <li><a href="../index.html">Acasa</a></li>
+                        <li><a href="plantele_mele.html">Plantele mele</a></li>
+                        <li><a href="depre_noi.html">Despre noi</a></li>
+                    </ul>
+                </div>
+                <div class="footer_col">
+                    <h3>Echipa:<br></h3>
+                    <ul>
+                        <li><a>Bal Emilia</a></li>
+                        <li><a>Caba Denisa</a></li>
+                    </ul>
+                </div>
+                <div class="footer_col">
+                    <h3>Scoala:</h3><br>
+                    <a>Colegiul National Gheorghe Sincai</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/plant_reader.js"></script>
+</body>
+</html>
