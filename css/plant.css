@@ -1,16 +1,4 @@
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #7A8054;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #4e5235;
-  }
+
   .text {
     font-size: 1.2rem; /* Set the font size for the text */
     color: #333; /* Dark gray color for the text */
@@ -131,4 +119,24 @@
   ul li {
     margin-bottom: 10px; /* Add spacing between list items */
     color: #4e5235; /* Use the same dark green color for consistency */
+  }
+
+  #notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffcccc; /* Light red background for warning */
+    color: #333; /* Dark text color */
+    padding: 15px 20px;
+    border: 1px solid #ff0000; /* Red border */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; /* Initially hidden */
+  }
+  
+  #notification p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
   }

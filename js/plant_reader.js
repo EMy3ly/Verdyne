@@ -2,6 +2,18 @@ var flag = false; // Flag to check if the data is already displayed
 var temperatureArray = []; // Array to store temperature values
 var humidityArray = []; // Array to store humidity values
 var labelsArray = []; // Array to store timestamps for the chart
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+labelsArray.push(new Date().toLocaleTimeString());
+
+
 var temperatureChart; // Chart.js instance
 var combinedChart; // Combined chart instance
 
@@ -133,14 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
   showData();
 });
 
-/*
-TO DO:
- - ngrock pe rpi
-    -> wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
-    -> unzip ngrok-stable-linux-arm.zip
-
-    onst response = await fetch('https://randomstring.ngrok.io/temperature');
-*/
 
 // Define the showPopup function in the global scope
 function showPopup(imageSrc, description) {
@@ -183,6 +187,52 @@ function showPopup(imageSrc, description) {
       }
     });
   });
+//   <!------------------------------------notification---------------------------------------------------> 
+function checkPlantHealth(temperature, humidity) {
+  const notification = document.getElementById("notification");
+  const message = document.getElementById("notification-message");
+
+  let warningMessage = "";
+
+  // Check temperature
+  if (temperature < 10) {
+    warningMessage += "⚠️ Temperatura este prea scăzută! Planta poate suferi daune. ";
+  } else if (temperature > 30) {
+    warningMessage += "⚠️ Temperatura este prea ridicată! Planta poate fi afectată. ";
+  }
+
+  // Check humidity
+  if (humidity < 30) {
+    warningMessage += "⚠️ Umiditatea este prea scăzută! Planta poate suferi. ";
+  } else if (humidity > 50) {
+    warningMessage += "⚠️ Umiditatea este prea ridicată! Planta poate fi afectată. ";
+  }
+
+  // Display the notification if there are warnings
+  if (warningMessage) {
+    message.textContent = warningMessage;
+    notification.style.display = "block";
+  } else {
+    notification.style.display = "none"; // Hide the notification if everything is fine
+  }
+}
+
+// Example function to fetch temperature and humidity
+function fetchTemperature() {
+  // Simulated data (replace with actual sensor data)
+  const temperature = Math.floor(Math.random() * 40); // Random temperature between 0 and 40
+  const humidity = Math.floor(Math.random() * 100); // Random humidity between 0 and 100
+
+  // Update the UI
+  document.getElementById("temp").textContent = `Temperature: ${temperature}°C`;
+  document.getElementById("humi").textContent = `Humidity: ${humidity}%`;
+
+  // Check plant health
+  checkPlantHealth(temperature, humidity);
+}
+
+// Call fetchTemperature every 5 seconds
+setInterval(fetchTemperature, 5000);
 
 //   <!------------------------------------PLANT-STRIKE---------------------------------------------------> 
  // Function to check the plant and update the streak

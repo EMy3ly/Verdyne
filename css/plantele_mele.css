@@ -99,7 +99,7 @@
   touch-action: manipulation;
 }
 .button:hover {
-  box-shadow: #4e5235 0 -25px 18px -14px inset, #4e5235 0 1px 2px, #4e5235 0 2px 4px, #4e5235 0 4px 8px;
+  /* box-shadow: #4e5235 0 -25px 18px -14px inset, #4e5235 0 1px 2px, #4e5235 0 2px 4px, #4e5235 0 4px 8px; */
   transform: scale(1.05) rotate(-1deg);
 }
 .swiper-navBtn{
