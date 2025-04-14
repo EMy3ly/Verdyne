@@ -422,7 +422,7 @@
   background-size: cover; /* Ensure the image covers the entire section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent the image from repeating */
-  height: 600px; /* Set the height of the section */
+  height: 850px; /* Set the height of the section */
   display: flex; /* Use flexbox for alignment */
   justify-content: center; /* Center the form horizontally */
   align-items: center; /* Center the form vertically */

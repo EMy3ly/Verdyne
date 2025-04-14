@@ -48,12 +48,31 @@
               <div class="image-content">
                 <span class="overlay"></span>
                 <div class="card-image">
-                  <img src="../photos/aloe_vera.png" alt="" class="card-img">
+                  <!-- Image acts as a button for the popup -->
+                  <img src="../photos/aloe_vera.jpg" alt="Plant 1" class="card-img" onclick="showPopup('../photos/aloe_vera.jpg', `
+                  <h2>🪴 Nume Aloe vera</h2>
+                  <p><strong>Nume popular:</strong> Aloe vera</p>
+                  <p><strong>Nume științific:</strong> Aloe barbadensis miller</p>
+                  <h3>🌍 Origine</h3>
+                  <p>Provine din Africa de Nord, Peninsula Arabică</p>
+                  <h3>🌱 Descriere</h3>
+                  <p>Aloe Vera este o plantă suculentă, renumită pentru gelul său cu proprietăți calmante, cicatrizante și hidratante. Frunzele sale groase, verzi, cu margini zimțate, stochează apă și sunt ușor de întreținut</p>
+                  <h3>🧑‍🌾 Mod de îngrijire</h3>
+                  <p><strong>☀️ Lumină:</strong> Preferă lumină puternică, directă. Poate tolera și lumină indirectă, dar va crește mai lent.</p>
+                  <p><strong>💧 Udare:</strong> Udată rar – doar când solul este complet uscat (aprox. o dată la 2-3 săptămâni). Evită udarea excesivă!</p>
+                  <p><strong>🌡️ Temperatură:</strong> Îi place căldura – între 18°C și 27°C. Nu suportă înghețul.</p>
+                  <p><strong>🌬️ Umiditate:</strong> Se simte bine în aer uscat – nu are nevoie de umiditate ridicată.</p>
+                  <h3>🪴 Sol și ghiveci</h3>
+                  <p>Preferă sol nisipos, bine drenat – ideal un amestec special pentru cactuși/suculente.</p>
+                  <h3>✅ Alte beneficii</h3>
+                  <p>Gelul din frunze este folosit în produse cosmetice și tratamente naturale.</p>
+                  <p>Calmează iritațiile pielii, arsurile solare, tăieturile minore.</p>
+                  `)">
                 </div>
               </div>
               <div class="card-content">
-                <h2 class="name">PLANT1</h2>
-                <p class="description">DESCRIPTION</p>
+                <h2 class="name">ALOE VERA</h2>
+                <p class="description">Rezistentă, vindecătoare, decorativă.</p>
                 <button id="plant1" class="button" onclick="showData()">Vezi</button>
                 <div id="data" class="hidden">
                   <p id="temp">Temperature: ---</p>
@@ -226,6 +245,28 @@
             <div class="input-box">
               <label>Specia:</label>
               <input type="text" placeholder="Introdu specia plantei" required />
+            </div>
+            <h3 style="color: #333;">INGRIJIREA PLANTEI</h3>
+            <div class="input-box">
+              <label>Lumina:</label>
+              <input type="text" placeholder="Introdu lumina" required />
+            </div>
+            <div class="input-box">
+              <label>Udare:</label>
+              <input type="text" placeholder="Introdu udarea" required />
+            </div>
+            
+            <div class="input-box">
+              <label>Temperatura:</label>
+              <input type="text" placeholder="Introdu temperatura" required />
+            </div>
+            <div class="input-box">
+              <label>Umiditate:</label>
+              <input type="text" placeholder="Introdu umiditatea" required />
+            </div>
+           <div class="input-box">
+              <label>Sol:</label>
+              <input type="text" placeholder="Introdu solul" required />
             </div>
             <button type="submit">Trimite</button>
           </form>
