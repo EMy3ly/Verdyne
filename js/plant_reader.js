@@ -2,17 +2,6 @@ var flag = false; // Flag to check if the data is already displayed
 var temperatureArray = []; // Array to store temperature values
 var humidityArray = []; // Array to store humidity values
 var labelsArray = []; // Array to store timestamps for the chart
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-labelsArray.push(new Date().toLocaleTimeString());
-
 
 var temperatureChart; // Chart.js instance
 var combinedChart; // Combined chart instance
@@ -46,10 +35,15 @@ function createDataDiv() {
     // Create a canvas for the chart
 }
 
-async function fetchTemperature() {
+async function readMeasurements() {
     try {
-        const response = await fetch('https://2773dc6b358d8b3a59637bfbaca68ccc.serveo.net/measurements'); // Replace with your server URL
-        const data = await response.json();
+        var response = await fetch('https://6825e10d436a0778e70158a0fe431927.serveo.net/measurements'); // Replace with your server URL
+        var data = await response.json();
+        
+        if (data.error) {
+            console.error("Error fetching data:", data.error);
+            return;
+        }
         document.getElementById('temp').innerText = "Temperature: " + data.temperature + "°C";
         document.getElementById('humi').innerText = "Humidity: " + data.humidity + "%";
 
@@ -58,12 +52,14 @@ async function fetchTemperature() {
         humidityArray.push(data.humidity);
         labelsArray.push(new Date().toLocaleTimeString());
 
-        // Update the chart
+        checkPlantHealth(data.temperature, data.humidity); // Check plant health
+
+        // Update the chart if it exists
         if (combinedChart) {
           combinedChart.update();
         }
-    } catch (error) {
-        console.error('Error fetching temperature:', error);
+    } catch (err) {
+        console.error('Error fetching temperature:', err);
     }
 }
 
@@ -120,24 +116,24 @@ function initializeCombinedChart() {
 function showData() {
   const dataContainer = document.getElementById("data"); // The container holding temperature, humidity, and graph
   const chartCanvas = document.getElementById("combinedChart"); // The chart canvas
-
+  
   // Check if the data container is currently visible
   if (!dataContainer.classList.contains("hidden")) {
     // Hide the data container and graph
     dataContainer.classList.add("hidden");
     chartCanvas.classList.add("hidden");
+    // console.log(`dataContainer = ${dataContainer.classList.contains("hidden")}`);
     return;
   }
-
+  
   // Show the data container and graph
   dataContainer.classList.remove("hidden");
   chartCanvas.classList.remove("hidden");
-
+  
   if (!combinedChart) { // Prevent multiple initializations
-      initializeCombinedChart(); // Initialize the graph
+    initializeCombinedChart(); // Initialize the graph
   }
-  fetchTemperature(); // Fetch data immediately
-  setInterval(fetchTemperature, 5000); // Fetch data every 2 seconds
+
 }
 
 // Automatically call showData when the page loads
@@ -145,12 +141,13 @@ document.addEventListener("DOMContentLoaded", () => {
   showData();
 });
 
+console.log("DA!");
 
 // Define the showPopup function in the global scope
 function showPopup(imageSrc, description) {
-    const popupContainer = document.getElementById("popup-container");
-    const popupImage = document.getElementById("popup-image");
-    const popupDescription = document.getElementById("popup-description");
+  const popupContainer = document.getElementById("popup-container");
+  const popupImage = document.getElementById("popup-image");
+  const popupDescription = document.getElementById("popup-description");
   
     popupImage.src = imageSrc; // Set the popup image source
     popupDescription.innerHTML = description; // Set the popup description (supports HTML content)
@@ -162,19 +159,19 @@ function showPopup(imageSrc, description) {
     const popupContainer = document.createElement("div");
     popupContainer.id = "popup-container";
     popupContainer.classList.add("popup", "hidden");
-  
+    
     popupContainer.innerHTML = `
-      <div class="popup-content">
-        <span id="close-popup" class="close-btn">&times;</span>
-        <img id="popup-image" src="" alt="Plant Image" />
-        <p id="popup-description"></p>
-      </div>
+    <div class="popup-content">
+    <span id="close-popup" class="close-btn">&times;</span>
+    <img id="popup-image" src="" alt="Plant Image" />
+    <p id="popup-description"></p>
+    </div>
     `;
   
     document.body.appendChild(popupContainer);
-  
+    
     const closePopup = document.getElementById("close-popup");
-  
+    
     // Close the popup when the close button is clicked
     closePopup.addEventListener("click", () => {
       popupContainer.classList.add("hidden");
@@ -189,50 +186,41 @@ function showPopup(imageSrc, description) {
   });
 //   <!------------------------------------notification---------------------------------------------------> 
 function checkPlantHealth(temperature, humidity) {
-  const notification = document.getElementById("notification");
-  const message = document.getElementById("notification-message");
+  console.log("Checking plant health..."); // Debugging line
 
+  
   let warningMessage = "";
-
+  
   // Check temperature
   if (temperature < 10) {
-    warningMessage += "⚠️ Temperatura este prea scăzută! Planta poate suferi daune. ";
+    warningMessage = "⚠️ Temperatura este prea scăzută! Planta poate suferi daune. ";
   } else if (temperature > 30) {
-    warningMessage += "⚠️ Temperatura este prea ridicată! Planta poate fi afectată. ";
+    warningMessage = "⚠️ Temperatura este prea ridicată! Planta poate fi afectată. ";
   }
-
+  
   // Check humidity
-  if (humidity < 30) {
-    warningMessage += "⚠️ Umiditatea este prea scăzută! Planta poate suferi. ";
+  if (humidity < 20) {
+    warningMessage = "⚠️ Umiditatea este prea scăzută! Planta poate suferi. ";
   } else if (humidity > 50) {
-    warningMessage += "⚠️ Umiditatea este prea ridicată! Planta poate fi afectată. ";
+    warningMessage = "⚠️ Umiditatea este prea ridicată! Planta poate fi afectată. ";
   }
-
+  
   // Display the notification if there are warnings
+  // let notification = document.getElementById("notification");
+  // let message = document.getElementById("notification-message");
+
   if (warningMessage) {
-    message.textContent = warningMessage;
-    notification.style.display = "block";
+    // message.innerText = warningMessage;
+    alert(warningMessage); // Show an alert with the warning message
+    // notification.style.display = "block";
   } else {
-    notification.style.display = "none"; // Hide the notification if everything is fine
+    // notification.style.display = "none"; // Hide the notification if everything is fine
+    console.log("Plant is healthy!"); // Debugging line
   }
-}
-
-// Example function to fetch temperature and humidity
-function fetchTemperature() {
-  // Simulated data (replace with actual sensor data)
-  const temperature = Math.floor(Math.random() * 40); // Random temperature between 0 and 40
-  const humidity = Math.floor(Math.random() * 100); // Random humidity between 0 and 100
-
-  // Update the UI
-  document.getElementById("temp").textContent = `Temperature: ${temperature}°C`;
-  document.getElementById("humi").textContent = `Humidity: ${humidity}%`;
-
-  // Check plant health
-  checkPlantHealth(temperature, humidity);
 }
 
 // Call fetchTemperature every 5 seconds
-setInterval(fetchTemperature, 5000);
+setInterval(readMeasurements, 5000);
 
 //   <!------------------------------------PLANT-STRIKE---------------------------------------------------> 
  // Function to check the plant and update the streak
